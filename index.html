@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SanFrancisco Food Truck Locator</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <meta name="description" content="SFoodStruck SanFrancisco City&#039;s premiere truck food tracker. Our state-of-the-art interactive map allows you to see which trucks are in your area RIGHT NOW. You can also search for your favorite trucks by cuisine, and hear about new trucks.">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+	</head>
+	<body>
+		<div class="row header">
+			<div id="img"> <img id="logo" src="img/foodtruck.jpg" alt="SF_FoodTruck"></div>
+  			<div id="titlecontent">SFoodsTruck - Food Truck Locator</div>
+			<nav class=headerlinks>
+        		<ul>
+			        <li>Refine Search: </li>
+			        <li><a href="/">Trucks by Cuisine</a>
+			        <li class="last-item"><a href="/contact">Contact</a></li>
+			    </ul>
+      		</nav>
+			<div class="dropdown">
+				<!--<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Cuisine
+				<span class="caret"></span>
+				</button>-->
+				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Distance</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Availability</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-9">
+				<input id='truckSearch' class='controls' type='text' placeholder='Search Box'>
+				<div id="map-canvas"></div>
+			</div>
+			<div class="col-md-3">
+					<div class="dropdown">
+					  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+					    Sort By : Relevance
+					    <span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Distance</a></li>
+					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Availability</a></li>
+					  </ul>
+					</div>
+				<div id="sidebar-list">
+				</div>
+				<ul id="pagination"></ul>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type=text/javascript></script>
+		<script src="js/jquery.pagination.min.js" type=text/javascript></script>
+  		<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places' 
+  		type='text/javascript' ></script>
+  		<script src="js/markerclusterer_compiled.js" type="text/javascript" ></script>
+  		<script src="js/myfoodtrucks_plotter.js" type="text/javascript"></script>
+	</body>
+</html>
