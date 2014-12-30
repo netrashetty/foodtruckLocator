@@ -48,7 +48,7 @@ $(function() {
   });	
 
   foodtrucks = $.getJSON(
-    "http://data.sfgov.org/resource/rqzj-sfat.json", {
+    "https://data.sfgov.org/resource/rqzj-sfat.json", {
       $where: "status='APPROVED' AND latitude IS NOT NULL AND longitude IS NOT NULL",
       $select: "objectid,applicant,facilitytype,address,fooditems,location,schedule"
     },
@@ -164,4 +164,20 @@ $(function() {
             refreshSidePanel(page);
         }
     });
+
+  /*DropDown Onclick*/
+  $('#dropdownTabs').click(function(e) {
+    //sort the foodtruckslist 
+    mylist = foodtruckslist;
+    //have to change this to sort on latitude and longitude
+    console.log("Inside click function dropdown click working");
+    //mylist.sort(function(a,b) { return -(a.objectid - b.objectid) });
+    refreshSidePanel(mylist, 0);
+    //do something
+    e.preventDefault();
   });
+  /*Contact PopOver*/
+   $("[data-toggle=popover]").popover('');
+});
+
+  
